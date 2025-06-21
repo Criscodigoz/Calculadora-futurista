@@ -1,18 +1,18 @@
 {
-  "name": "calculadora-futurista",
+  "name": "Calculadora-futurista",
   "private": false,
   "version": "1.0.0",
   "description": "Una calculadora futurista con diseño innovador y efectos visuales avanzados",
-  "author": "Tu Nombre",
+  "author": "Criscodigoz",
   "license": "MIT",
   "keywords": ["calculadora", "futurista", "react", "tailwind", "diseño"],
-  "homepage": "https://tu-usuario.github.io/calculadora-futurista",
+  "homepage": "https://tu-usuario.github.io/Calculadora-futurista",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tu-usuario/calculadora-futurista.git"
+    "url": "https://github.com/tu-usuario/Calculadora-futurista.git"
   },
   "bugs": {
-    "url": "https://github.com/tu-usuario/calculadora-futurista/issues"
+    "url": "https://github.com/tu-usuario/Calculadora-futurista/issues"
   },
   "type": "module",
   "scripts": {

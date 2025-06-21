@@ -28,10 +28,10 @@ Una calculadora con diseño innovador y efectos visuales futuristas, construida 
 ### Instalación
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/calculadora-futurista.git
+git clone https://github.com/Criscodigoz/Calculadora-futurista.git
 
 # Navegar al directorio
-cd calculadora-futurista
+cd Calculadora-futurista
 
 # Instalar dependencias
 npm install
@@ -90,7 +90,7 @@ pnpm preview
 
 ## 🌐 Demo en Vivo
 
-[Ver Demo](https://tu-usuario.github.io/calculadora-futurista)
+[Ver Demo](https://Criscodigoz.github.io/Calculadora-futurista)
 
 ## 📄 Licencia
 
@@ -108,7 +108,7 @@ Las contribuciones son bienvenidas. Por favor:
 
 ## 👨‍💻 Autor
 
-Creado con ❤️ por [Tu Nombre]
+Creado con ❤️ por [Criscodigoz]
 
 ## 🙏 Agradecimientos
 
