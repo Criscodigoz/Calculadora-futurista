@@ -2,34 +2,36 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main # Se ejecuta cuando hay un push a la rama main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main # También se ejecuta en pull requests a la rama main (opcional, pero lo mantengo)
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'npm'
-        
-    - name: Install dependencies
-      run: npm ci
-      
-    - name: Build
-      run: npm run build
-      
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+    runs-on: ubuntu-latest # El sistema operativo donde se ejecuta el flujo de trabajo
 
+    steps:
+      - name: Checkout repository # Paso para obtener el código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js with pnpm cache # Configura Node.js y la caché para pnpm
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # Asegúrate de que esta versión de Node.js sea compatible con tu proyecto
+          cache: 'pnpm' # ¡IMPORTANTE! Configura la caché para pnpm
+
+      - name: Install dependencies with pnpm # Instala las dependencias usando pnpm
+        run: pnpm install --frozen-lockfile # '--frozen-lockfile' asegura la consistencia de las dependencias
+
+      - name: Build project with pnpm # Construye el proyecto usando pnpm
+        run: pnpm run build
+
+      - name: Deploy to GitHub Pages # Despliega los archivos construidos a GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4 # Usa la versión 4 más reciente de la acción de despliegue
+        if: github.ref == 'refs/heads/main' # Solo despliega si el push es en la rama main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Token de GitHub para autenticación
+          publish_dir: ./dist # La carpeta que contiene los archivos que se van a desplegar
+          # cname: example.com # Descomenta y reemplaza si usas un dominio personalizado
